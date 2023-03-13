@@ -46,4 +46,4 @@
    
 ## Схема спроектированной базы данных
 
-![alt text] https://github.com/hotaged/ligth/blob/main/database/schema/public.png?raw=True
+![alt text] (https://github.com/hotaged/ligth/blob/main/database/schema/public.png?raw=True)
