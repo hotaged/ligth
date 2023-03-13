@@ -5,7 +5,6 @@ import pydantic
 
 from abc import ABC
 from typing import Callable
-from ujson import JSONDecodeError
 
 logging.basicConfig(level=logging.INFO)
 
