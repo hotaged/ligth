@@ -7,7 +7,8 @@ from flashlight.protocol import FlashlightControlProtocol
 @click.command()
 @click.option(
     '--address',
-    default='127.0.0.1:9999'
+    default='127.0.0.1:9999',
+    help='host:port of server to connect.'
 )
 def cli(address: str):
     ui = FlashlightUI()
