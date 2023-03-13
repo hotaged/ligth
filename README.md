@@ -45,5 +45,6 @@
     ```
    
 ## Схема спроектированной базы данных
-
-![alt text] (https://raw.githubusercontent.com/hotaged/ligth/main/database/schema/public.png)
+<div align="center">
+    <img src="https://raw.githubusercontent.com/hotaged/ligth/main/database/schema/public.png" alt="Schema">
+</div>
