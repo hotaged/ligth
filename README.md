@@ -31,8 +31,9 @@
     Usage: flashlight [OPTIONS]
     
     Options:
-      --address TEXT  host:port of server to connect.
-      --help          Show this message and exit.
+      --address TEXT          host:port of server to connect.
+      --method [tcp|fastapi]  Method for interaction.
+      --help                  Show this message and exit.
     ```
 4. Запуск с адресом по умолчанию (127.0.0.1:9999)
     ```shell
@@ -43,6 +44,7 @@
     ```shell
     flashlight --address 192.168.3.103:9999
     ```
+
    
 ## Схема спроектированной базы данных
 <div align="center">

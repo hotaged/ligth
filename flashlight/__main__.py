@@ -1,7 +1,11 @@
 import click
+import logging
 
 from flashlight.ui import FlashlightUI
 from flashlight.protocol import FlashlightControlProtocol
+from flashlight.server import setup_command_listener
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 @click.command()
@@ -10,11 +14,23 @@ from flashlight.protocol import FlashlightControlProtocol
     default='127.0.0.1:9999',
     help='host:port of server to connect.'
 )
-def cli(address: str):
+@click.option(
+    '--method',
+    type=click.Choice(['tcp', 'fastapi'], case_sensitive=False),
+    default='fastapi',
+    help='Method for interaction.'
+)
+def cli(address: str, method: str):
     ui = FlashlightUI()
-    proto = FlashlightControlProtocol(address)
 
-    ui.add_periodic_task(lambda: proto.poll(ui), 100)
+    if method == 'fastapi':
+        setup_command_listener(address, ui)
+    elif method == 'tcp':
+        proto = FlashlightControlProtocol(address, ui)
+        ui.add_periodic_task(lambda: proto.poll(), 100)
+    else:
+        exit(-1)
+
     ui.title("Flashlight")
     ui.mainloop()
 
